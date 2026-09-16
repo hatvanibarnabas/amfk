@@ -1,0 +1,11 @@
+services:
+  app:
+    image: composer:2
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    command: php artisan serve --host=0.0.0.0 --port=8000
+    environment:
+      APP_URL: http://localhost:8000
